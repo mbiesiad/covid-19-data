@@ -1,28 +1,30 @@
-# Coronavirus (Covid-19) Data in the United States
+# Koronawirus (Covid-19) - dane ze Stanów Zajednoczonych
 
 [ [U.S. State-Level Data](us-states.csv) ([Raw CSV](https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-states.csv)) | [U.S. County-Level Data](us-counties.csv) ([Raw CSV](https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-counties.csv)) ]
 
-The New York Times is releasing a series of data files with cumulative counts of coronavirus cases in the United States, at the state and county level, over time. We are compiling this time series data from state and local governments and health departments in an attempt to provide a complete record of the ongoing outbreak.
+New York Times wydaje serię plików danych ze skumulowaną liczbą przypadków koronawirusa w Stanach Zjednoczonych, na szczeblu stanowym i okręgowym, w miarę upływu czasu. Gromadzimy dane z tych szeregów czasowych z rządów stanowych i lokalnych oraz departamentów zdrowia w celu zapewnienia pełnego zapisu trwającego wybuchu epidemii.
 
-Since late January, The Times has tracked cases of coronavirus in real time as they were identified after testing. Because of the widespread shortage of testing, however, the data is necessarily limited in the picture it presents of the outbreak.
+Od końca stycznia The Times śledził przypadki koronawirusa w czasie rzeczywistym, gdy wykryto je po testach. Jednak z powodu powszechnego braku testów dane są koniecznie ograniczone na obrazie przedstawiającym wybuch epidemii.
 
-We have used this data to power our [maps](https://www.nytimes.com/interactive/2020/us/coronavirus-us-cases.html) and [reporting](https://www.nytimes.com/coronavirus) tracking the outbreak, and it is now being made available to the public in response to requests from researchers, scientists and government officials who would like access to the data to better understand the outbreak.
+Wykorzystaliśmy te dane do zasilania naszych [map](https://www.nytimes.com/interactive/2020/us/coronavirus-us-cases.html) i [raportowania](https://www.nytimes.com/coronavirus) śledzenia epidemii, a teraz jest to udostępniane opinii publicznej w odpowiedzi na prośby badaczy, naukowców i urzędników państwowych, którzy chcieliby uzyskać dostęp do danych, aby lepiej zrozumieć epidemię.
 
-The data begins with the first reported coronavirus case in Washington State on Jan. 21, 2020. We will publish regular updates to the data in this repository. 
+Dane rozpoczynają się od pierwszego zgłoszonego przypadku koronawirusa w stanie Waszyngton 21 stycznia 2020 r. Będziemy publikować regularne aktualizacje danych w tym repozytorium.
 
-## United States Data
+## Dane - Stany Zjednoczone
 
-Data on cumulative coronavirus cases and deaths can be found in two files for states and counties.
+Dane dotyczące skumulowanych przypadków zakażenia koronawirusem i zgonów można znaleźć w dwóch plikach dla stanów i powiatów.
 
-Each row of data reports cumulative counts based on our best reporting up to the moment we publish an update. We do our best to revise earlier entries in the data when we receive new information.
+Każdy wiersz danych podaje skumulowane liczby w oparciu o nasze najlepsze raporty do momentu opublikowania aktualizacji. Dokładamy wszelkich starań, aby korygować wcześniejsze wpisy w danych, gdy otrzymujemy nowe informacje.
 
-Both files contain [FIPS codes](https://www.census.gov/quickfacts/fact/note/US/fips), a standard geographic identifier, to make it easier for an analyst to combine this data with other data sets like a map file or population data.
+Oba pliki zawierają [kody FIPS](https://www.census.gov/quickfacts/fact/note/US/fips), standardowy identyfikator geograficzny, aby ułatwić analitykowi połączenie tych danych z innymi zestawami danych, takimi jak plik mapy lub dane o populacji.
 
-Download all the data or clone this repository by clicking the green "Clone or download" button above.
+Pobierz wszystkie dane lub sklonuj to repozytorium, klikając zielony przycisk „Klonuj lub pobierz” powyżej.
 
-### State-Level Data
+*Raw data - surowe dane.*
 
-State-level data can be found in the [states.csv](us-states.csv) file. ([Raw CSV file here.](https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-states.csv))
+### Dane - poziom stanowy (w oparciu o stany)
+
+Dane na poziomie stanu można znaleźć w pliku [states.csv](us-states.csv). ([Plik Raw CSV tutaj.](https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-states.csv))
 
 ```
 date,state,fips,cases,deaths
@@ -30,9 +32,9 @@ date,state,fips,cases,deaths
 ...
 ```
 
-### County-Level Data
+### Dane - poziom hrabstwa (w oparciu o hrabstwa)
 
-County-level data can be found in the [counties.csv](us-counties.csv) file. ([Raw CSV file here.](https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-counties.csv))
+Dane na poziomie hrabstwa można znaleźć w pliku [counties.csv](us-counties.csv). ([Plik Raw CSV tutaj.](https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-counties.csv))
 
 ```
 date,county,state,fips,cases,deaths
@@ -40,81 +42,82 @@ date,county,state,fips,cases,deaths
 ...
 ```
 
-In some cases, the geographies where cases are reported do not map to standard county boundaries. See the list of [geographic exceptions](#geographic-exceptions) for more detail on these.
+W niektórych przypadkach obszary geograficzne, w których zgłaszane są przypadki, nie są odwzorowane na standardowe granice hrabstwa. Zobacz listę [wyjątków geograficznych](#geographic-exceptions), aby uzyskać więcej szczegółów na ten temat.
 
-## Methodology and Definitions
+## Metodologia i definicje
 
-The data is the product of dozens of journalists working across several time zones to monitor news conferences, analyze data releases and seek clarification from public officials on how they categorize cases. 
+Dane są produktem dziesiątek dziennikarzy pracujących w różnych strefach czasowych w celu monitorowania konferencji prasowych, analizowania publikacji danych i szukania wyjaśnień od urzędników publicznych na temat tego, w jaki sposób kategoryzują przypadki.
 
-It is also a response to a fragmented American public health system in which overwhelmed public servants at the state, county and territorial level have sometimes struggled to report information accurately, consistently and speedily. On several occasions, officials have corrected information hours or days after first reporting it. At times, cases have disappeared from a local government database, or officials have moved a patient first identified in one state or county to another, often with no explanation. In those instances, which have become more common as the number of cases has grown, our team has made every effort to update the data to reflect the most current, accurate information while ensuring that every known case is counted.
+Jest to również odpowiedź na rozdrobniony amerykański system zdrowia publicznego, w którym przytłoczeni urzędnicy państwowi, powiatowi i terytorialni czasami usilnie starają się przekazywać informacje dokładnie, konsekwentnie i szybko. Kilkakrotnie urzędnicy poprawiali informacje godziny lub dni po pierwszym zgłoszeniu. Czasami przypadki znikały z lokalnej bazy danych władz lub urzędnicy przenieśli najpierw pacjenta zidentyfikowanego w jednym stanie lub hrabstwie do innego, często bez wyjaśnienia. W przypadkach, które stały się bardziej powszechne w miarę wzrostu liczby spraw, nasz zespół dołożył wszelkich starań, aby zaktualizować dane w celu odzwierciedlenia najbardziej aktualnych, dokładnych informacji, jednocześnie zapewniając, że każdy znany przypadek jest liczony.
+Gdy informacje są dostępne, liczymy pacjentów tam, gdzie są leczeni, niekoniecznie w miejscu ich zamieszkania.
 
-When the information is available, we count patients where they are being treated, not necessarily where they live.
+W większości przypadków proces rejestrowania spraw był prosty. Ale z powodu mnogości metod zgłaszania tych danych w ponad 50 rządach stanowych i terytorialnych oraz w setkach lokalnych departamentów zdrowia, nasi dziennikarze musieli czasem dokonywać trudnych interpretacji dotyczących liczenia i rejestrowania przypadków.
 
-In most instances, the process of recording cases has been straightforward. But because of the patchwork of reporting methods for this data across more than 50 state and territorial governments and hundreds of local health departments, our journalists sometimes had to make difficult interpretations about how to count and record cases.
+Z tych powodów nasze dane w niektórych przypadkach nie będą dokładnie odpowiadały informacjom zgłaszanym przez państwa i powiaty. Różnice te obejmują te przypadki: kiedy rząd federalny zorganizował loty do Stanów Zjednoczonych dla Amerykanów narażonych na koronawirusa w Chinach i Japonii, nasz zespół odnotował te przypadki w stanach, w których pacjenci byli następnie leczeni, chociaż lokalne oddziały zdrowia na ogół nie . Kiedy mieszkaniec Florydy zmarł w Los Angeles, odnotowaliśmy, że jej śmierć miała miejsce w Kalifornii, a nie na Florydzie, chociaż urzędnicy na Florydzie odnotowali jej przypadek we własnych aktach. A kiedy urzędnicy w niektórych stanach zgłosili nowe przypadki bez natychmiastowego określenia, gdzie leczeni są pacjenci, próbowaliśmy dodać informacje o ich lokalizacji później, gdy tylko będą dostępne.
 
-For those reasons, our data will in some cases not exactly match with the information reported by states and counties. Those differences include these cases: When the federal government arranged flights to the United States for Americans exposed to the coronavirus in China and Japan, our team recorded those cases in the states where the patients subsequently were treated, even though local health departments generally did not. When a resident of Florida died in Los Angeles, we recorded her death as having occurred in California rather than Florida, though officials in Florida counted her case in their own records. And when officials in some states reported new cases without immediately identifying where the patients were being treated, we attempted to add information about their locations later, once it became available.
+* Potwierdzone przypadki
 
-* Confirmed Cases
+Potwierdzonymi przypadkami są pacjenci, u których wynik testu na obecność koronawirusa jest dodatni. Uważamy sprawę za potwierdzoną, gdy została zgłoszona przez federalną, stanową, terytorialną lub lokalną agencję rządową.
 
-Confirmed cases are patients who test positive for the coronavirus. We consider a case confirmed when it is reported by a federal, state, territorial or local government agency.
+* Daty
 
-* Dates
+Dla każdej daty pokazujemy łączną liczbę potwierdzonych przypadków i zgonów zgłoszonych tego dnia w danym hrabstwie lub stanie. Wszystkie przypadki i zgony są liczone od daty pierwszego ogłoszenia.
 
-For each date, we show the cumulative number of confirmed cases and deaths as reported that day in that county or state. All cases and deaths are counted on the date they are first announced.
+* Hrabstwa
 
-* Counties
+W niektórych przypadkach dane z wielu hrabstw lub innych regionów poza hrabstwem zgłaszamy jako jedno hrabstwo. Na przykład zgłaszamy jedną wartość dla Nowego Jorku, obejmującą sprawy dla hrabstw w Nowym Jorku, Kings, Queens, Bronx i Richmond. W takich przypadkach pole kodu FIPS będzie puste. (W przyszłości możemy przypisywać kody FIPS do tych obszarów geograficznych.) Zobacz listę [wyjątków geograficznych](#geographic-exceptions). 
 
-In some instances, we report data from multiple counties or other non-county geographies as a single county. For instance, we report a single value for New York City, comprising the cases for New York, Kings, Queens, Bronx and Richmond Counties. In these instances the FIPS code field will be empty. (We may assign FIPS codes to these geographies in the future.) See the list of [geographic exceptions](#geographic-exceptions). 
+Miasta takie jak St. Louis i Baltimore, które są administrowane oddzielnie od sąsiedniego hrabstwa o tej samej nazwie, są liczone osobno.
 
-Cities like St. Louis and Baltimore that are administered separately from an adjacent county of the same name are counted separately.
+* Hrabstwa “ieznane”
 
-* “Unknown” Counties
+Wiele państwowych departamentów zdrowia decyduje się na osobne zgłaszanie przypadków, gdy miejsce zamieszkania pacjenta jest nieznane lub oczekuje na ustalenie. W takich przypadkach rejestrujemy nazwę hrabstwa jako „Nieznany”. W miarę udostępniania większej ilości informacji o tych przypadkach skumulowana liczba spraw w hrabstwach „Nieznane” może się zmieniać.
 
-Many state health departments choose to report cases separately when the patient’s county of residence is unknown or pending determination. In these instances, we record the county name as “Unknown.” As more information about these cases becomes available, the cumulative number of cases in “Unknown” counties may fluctuate.
+Czasami przypadki są najpierw zgłaszane w jednym hrabstwie, a następnie przenoszone do innego hrabstwa. W rezultacie skumulowana liczba przypadków może ulec zmianie dla danego powiatu.
 
-Sometimes, cases are first reported in one county and then moved to another county. As a result, the cumulative number of cases may change for a given county.
-
-### Geographic Exceptions
+### Wyjątki geograficzne
 
 * New York City
 
-All cases for the five boroughs of New York City (New York, Kings, Queens, Bronx and Richmond counties) are assigned to a single area called New York City.
+Wszystkie przypadki dla pięciu dzielnic Nowego Jorku (hrabstwa Nowy Jork, Kings, Queens, Bronx i Richmond) są przypisane do jednego obszaru o nazwie Nowy Jork.
 
 * Kansas City, Mo.
 
-Four counties (Cass, Clay, Jackson and Platte) overlap the municipality of Kansas City, Mo. The cases and deaths that we show for these four counties are only for the portions exclusive of Kansas City. Cases and deaths for Kansas City are reported as their own line.
+Cztery hrabstwa (Cass, Clay, Jackson i Platte) pokrywają się z gminą Kansas City, Mo. Przypadki i zgony, które pokazujemy dla tych czterech hrabstw, dotyczą tylko części z wyłączeniem Kansas City. Przypadki i zgony w Kansas City są zgłaszane jako osobna linia.
 
 * Joplin, Mo.
 
-Joplin is reported separately from Jasper and Newton Counties. 
+Joplin jest zgłaszany osobno od hrabstw Jasper i Newton.
 
 * Chicago
 
-All cases and deaths for Chicago are reported as part of Cook County. 
+Wszystkie przypadki i zgony w Chicago są zgłaszane jako część hrabstwa Cook.
 
 
-## License and Attribution
+## Licencja i uznanie autorstwa
 
-In general, we are making this data publicly available for broad, noncommercial public use including by medical and public health researchers, policymakers, analysts and local news media.
+Zasadniczo udostępniamy te dane publicznie do szerokiego, niekomercyjnego użytku publicznego, w tym przez badaczy medycyny i zdrowia publicznego, decydentów, analityków i lokalne media.
 
-If you use this data, you must attribute it to “The New York Times” in any publication. If you would like a more expanded description of the data, you could say “Data from The New York Times, based on reports from state and local health agencies.”
+Jeśli korzystasz z tych danych, musisz przypisać je do „The New York Times” w dowolnej publikacji. Jeśli chcesz bardziej rozwinięty opis danych, możesz powiedzieć „Dane z New York Times, na podstawie raportów z państwowych i lokalnych agencji zdrowia.”
 
-If you use it in an online presentation, we would appreciate it if you would link to our U.S. tracking page at [https://www.nytimes.com/interactive/2020/us/coronavirus-us-cases.html](https://www.nytimes.com/interactive/2020/us/coronavirus-us-cases.html).
+Jeśli użyjesz go w prezentacji online, będziemy wdzięczni, jeśli umieścisz link do naszej strony śledzenia w USA pod adresem [https://www.nytimes.com/interactive/2020/us/coronavirus-us-cases.html](https://www.nytimes.com/interactive/2020/us/coronavirus-us-cases.html).
 
-If you use this data, please let us know at covid-data@nytimes.com and indicate if you would be willing to talk to a reporter about your research.
+Jeśli korzystasz z tych danych, daj nam znać na adres covid-data@nytimes.com i wskaż, czy zechcesz porozmawiać z reporterem o swoich badaniach.
 
-See our [LICENSE](LICENSE) for the full terms of use for this data.
+Zobacz naszą [LICENCJĘ](LICENSE) dla pełnych warunków korzystania z tych danych.
 
 
-## Contact Us
+## Skontaktuj się z nami
 
-If you have questions about the data or licensing conditions, please contact us at:
+Jeśli masz pytania dotyczące danych lub warunków licencyjnych, skontaktuj się z nami pod adresem:
 
 covid-data@nytimes.com
 
 
-## Contributors
+## Współtwórcy
 
-Mitch Smith, Karen Yourish, Sarah Almukhtar, Keith Collins, Danielle Ivory and Amy Harmon have been leading our U.S. data collection efforts.
+Mitch Smith, Karen Yourish, Sarah Almukhtar, Keith Collins, Danielle Ivory oraz Amy Harmon przewodzą naszym wysiłkom w zakresie gromadzenia danych w USA.
 
-Data has also been compiled by Jordan Allen, Jeff Arnold, Aliza Aufrichtig, Mike Baker, Matthew Bloch, Nicholas Bogel-Burroughs, Maddie Burakoff, Christopher Calabrese, Andrew Chavez, Robert Chiarito, Carmen Cincotti, Alastair Coote, Matt Craig, John Eligon, Tiff Fehr, Andrew Fischer, Matt Furber, Rich Harris, Lauryn Higgins, Jake Holland, Will Houp, Jon Huang, Danya Issawi, Jacob LaGesse, Patricia Mazzei, Allison McCann, Jesse McKinley, Miles McKinley, Sarah Mervosh, Andrea Michelson, Blacki Migliozzi, Steven Moity, Richard A. Oppel Jr., Jugal K. Patel, Nina Pavlich, Azi Paybarah, Sean Plambeck, Scott Reinhard, Thomas Rivas, Michael Robles, Alison Saldanha, Alex Schwartz, Libby Seline, Shelly Seroussi, Rachel Shorey, Anjali Singhvi, Charlie Smart, Ben Smithgall, Steven Speicher, Michael Strickland, Albert Sun, Tracey Tully, Maura Turcotte, Miles Watkins, Jeremy White, Josh Williams and Jin Wu.
+Dane zostały również opracowane przez Jordan Allen, Jeff Arnold, Aliza Aufrichtig, Mike Baker, Matthew Bloch, Nicholas Bogel-Burroughs, Maddie Burakoff, Christopher Calabrese, Andrew Chavez, Robert Chiarito, Carmen Cincotti, Alastair Coote, Matt Craig, John Eligon, Tiff Fehr, Andrew Fischer, Matt Furber, Rich Harris, Lauryn Higgins, Jake Holland, Will Houp, Jon Huang, Danya Issawi, Jacob LaGesse, Patricia Mazzei, Allison McCann, Jesse McKinley, Miles McKinley, Sarah Mervosh, Andrea Michelson, Blacki Migliozzi, Steven Moity, Richard A. Oppel Jr., Jugal K. Patel, Nina Pavlich, Azi Paybarah, Sean Plambeck, Scott Reinhard, Thomas Rivas, Michael Robles, Alison Saldanha, Alex Schwartz, Libby Seline, Shelly Seroussi, Rachel Shorey, Anjali Singhvi, Charlie Smart, Ben Smithgall, Steven Speicher, Michael Strickland, Albert Sun, Tracey Tully, Maura Turcotte, Miles Watkins, Jeremy White, Josh Williams and Jin Wu.
+
+Tłumaczenie: @[mbiesiad](https://github.com/mbiesiad)
